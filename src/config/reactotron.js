@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /**
  * @author Fábio Pereira <fabio.pereira.gti@gmail.com>
  * @flow
@@ -9,15 +10,15 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 // $FlowFixMe
 if (__DEV__) {
-    const tron = Reactotron.setAsyncStorageHandler(AsyncStorage)
-        .configure({host: '192.168.1.3'})
-        .useReactNative()
-        .use(reactotronRedux())
-        .use(reactotronSaga())
-        .connect();
+  const tron = Reactotron.setAsyncStorageHandler(AsyncStorage)
+    .configure({host: '192.168.1.3'})
+    .useReactNative()
+    .use(reactotronRedux())
+    .use(reactotronSaga())
+    .connect();
 
-    tron.clear();
+  tron.clear();
 
-    // $FlowFixMe
-    console.tron = tron;
+  // $FlowFixMe
+  console.tron = tron;
 }

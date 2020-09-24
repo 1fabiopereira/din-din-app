@@ -6,53 +6,48 @@ import {StyleSheet} from 'react-native';
 import Colors from '~/lib/Colors';
 
 export default StyleSheet.create({
-    Details: {
-        fontSize: 12,
-        color: '#999'
-    },
+  Details: {
+    color: Colors.DustyGray,
+    fontSize: 12,
+  },
 
-    Date: {
-        fontSize: 12,
-        color: '#999'
-    },
+  Info: {
+    alignItems: 'flex-start',
+    flex: 3,
+    justifyContent: 'center',
+  },
 
-    Info: {
-        flex: 3,
-        justifyContent: 'center',
-        alignItems: 'flex-start'
-    },
+  Item: {
+    borderBottomColor: Colors.Silver,
+    borderBottomWidth: 0.5,
+    flexDirection: 'row',
+    height: 80,
+    justifyContent: 'center',
+    width: '100%',
+  },
 
-    Item: {
-        borderBottomColor: '#ccc',
-        borderBottomWidth: 0.5,
-        flexDirection: 'row',
-        height: 80,
-        justifyContent: 'center',
-        width: '100%',
-    },
+  Money: {
+    alignItems: 'flex-end',
+    flex: 2,
+    justifyContent: 'center',
+  },
 
-    Money: {
-        flex: 2,
-        justifyContent: 'center',
-        alignItems: 'flex-end'
-    },
+  Name: {
+    color: Colors.DoveGray,
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
 
-    Name: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: '#666'
-    },
+  Value: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
 
-    Value: {
-        fontSize: 20,
-        fontWeight: 'bold',
-    },
+  ValueIn: {
+    color: Colors.Mantis,
+  },
 
-    ValueIn: {
-        color: 'green'
-    },
-
-    ValueOut: {
-        color: 'red'
-    }
+  ValueOut: {
+    color: Colors.Red,
+  },
 });

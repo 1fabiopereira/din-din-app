@@ -4,10 +4,18 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "android:bundle": "(cd android && ./gradlew bundleRelease)",
+    "android:apk": "(cd android && ./gradlew assembleRelease)",
     "ios": "react-native run-ios",
-    "start": "react-native start",
+    "start": "cp assets/DependencyGraph.js node_modules/metro/src/node-haste/ && react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint --fix src/*.js src/**/*.js src/**/**/*.js src/**/**/**/*.js src/**/**/**/**/*.js",
+    "flow": "flow",
+    "prettier": "prettier src/*.js src/**/*.js src/**/**/*.js src/**/**/**/*.js src/**/**/**/**/*.js",
+    "check": "npm run flow | npm run lint",
+    "visualizer": "npx visualize-bundle",
+    "optimization:png": "imageOptim ./src/assets/**/*.png",
+    "optimization:svg": "npx svgo ./src/assets/**/*.svg --disable=removeViewBox"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.12.0",

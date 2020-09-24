@@ -6,44 +6,44 @@ import {StyleSheet} from 'react-native';
 import Colors from '~/lib/Colors';
 
 export default StyleSheet.create({
-    Button: {
-        alignItems: 'center',
-        backgroundColor: Colors.Mantis,
-        borderRadius: 100,
-        height: 45,
-        justifyContent: 'center',
-        width: 150,
-    },
+  Button: {
+    alignItems: 'center',
+    backgroundColor: Colors.Mantis,
+    borderRadius: 100,
+    height: 45,
+    justifyContent: 'center',
+    width: 150,
+  },
 
-    Center: {
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
+  Center: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 
-    Content: {
-        flex: 3
-    },
+  Content: {
+    flex: 3,
+  },
 
-    Footer: {
-        flex: 1
-    },
+  Footer: {
+    flex: 1,
+  },
 
-    Message: {
-        textAlign: 'justify',
-        marginTop: 20
-    },
+  Message: {
+    marginTop: 20,
+    textAlign: 'justify',
+  },
 
-    Name: {
-        fontSize: 40,
-        fontWeight: 'bold'
-    },
+  Name: {
+    fontSize: 40,
+    fontWeight: 'bold',
+  },
 
-    Text: {
-        fontSize: 16,
-        color: Colors.White
-    },
+  Text: {
+    color: Colors.White,
+    fontSize: 16,
+  },
 
-    Welcome: {
-        fontSize: 25,
-    }
+  Welcome: {
+    fontSize: 25,
+  },
 });

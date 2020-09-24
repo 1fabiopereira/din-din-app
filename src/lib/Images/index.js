@@ -12,8 +12,8 @@ import Wallet from '~/assets/Svgs/wallet.svg';
 import Welcome from '~/assets/Svgs/welcome.svg';
 
 export default {
-    Arrow,
-    Budget,
-    Wallet,
-    Welcome,
-}
+  Arrow,
+  Budget,
+  Wallet,
+  Welcome,
+};

@@ -3,8 +3,8 @@
  * @flow
  */
 export type Props = {
-    callback: function,
-    name: string,
-    date: string,
-    value: string
+  callback: function,
+  name: string,
+  date: string,
+  value: string,
 };

@@ -3,9 +3,12 @@
  * @flow
  */
 export default {
-    Mantis: "#8dd070",
-    Black: '#000',
-    Primary: '#10a1f5',
-    Transparent: 'transparent',
-    White: '#fff',
+  Black: '#000',
+  DoveGray: '#666666',
+  DustyGray: '#999999',
+  Mantis: '#8dd070',
+  Red: '#ff0000',
+  Silver: '#cccccc',
+  Transparent: 'transparent',
+  White: '#fff',
 };

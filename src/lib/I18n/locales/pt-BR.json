@@ -1,6 +1,8 @@
 {
-  "total-balance": "Saldo total",
+  "add-transaction": "Nova transação",
+  "details-transaction": "Detalhes da transação",
   "start": "Começar",
+  "total-balance": "Saldo total",
   "welcome": "Bem vindo (a)",
   "welcome-message": "Somos uma carteira virtual onde você terá o controle total de suas transações, saiba como estão seus gastos, quais suas últimas transações e muito mais, tudo isso a um click de distância."
 }
