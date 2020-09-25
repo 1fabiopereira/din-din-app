@@ -1,0 +1,14 @@
+{
+  "testRunner": "mocha",
+  "runnerConfig": "e2e/.mocharc.json",
+  "configurations": {
+    "ios": {
+      "type": "ios.simulator",
+      "binaryPath": "./ios/build/Build/Products/Debug-iphonesimulator/DinDin.app",
+      "build": "xcodebuild -workspace ios/DinDin.xcworkspace -scheme DinDin -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+      "device": {
+        "type": "iPhone 11"
+      }
+    }
+  }
+}

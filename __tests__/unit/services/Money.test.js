@@ -17,7 +17,7 @@ describe('Money Service', () => {
 
   it('Should be ignore a non number values', () => {
     expect(Money(NaN)).toBe('R$0,00');
-    expect(Money('-99.98', '$')).toBe('$0,00');
+    expect(Money('-99.98', '$')).toBe('-$99,98');
     expect(Money(null)).toBe('R$0,00');
     expect(Money(undefined)).toBe('R$0,00');
   });

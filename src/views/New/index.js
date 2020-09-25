@@ -63,17 +63,19 @@ const New = (props: Props): React$Node => {
 
   return (
     <Container padding={30}>
-      <View style={Styles.Center}>
-        <Wallet height={150} width={150} />
+      <View style={Styles.Center} testID="transaction">
+        <Wallet height={150} width={150} testID="wallet-icon" />
 
         <View style={Styles.Row}>
           <TouchableOpacity
+            testID="in-button"
             onPress={() => setOut(false)}
             style={[Styles.Option, out === false ? Styles.In : null]}>
             <Text style={Styles.Text}>{translate('in')}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
+            testID="out-button"
             onPress={() => setOut(true)}
             style={[Styles.Option, out ? Styles.Out : null]}>
             <Text style={Styles.Text}>{translate('out')}</Text>
@@ -81,6 +83,7 @@ const New = (props: Props): React$Node => {
         </View>
       </View>
       <TextInput
+        testID="name-input"
         style={Styles.Input}
         placeholder={translate('name')}
         onChangeText={setName}
@@ -88,6 +91,7 @@ const New = (props: Props): React$Node => {
       />
 
       <TextInput
+        testID="value-input"
         style={Styles.Input}
         placeholder={translate('value')}
         onChangeText={setValue}
@@ -96,13 +100,17 @@ const New = (props: Props): React$Node => {
       />
 
       <TextInput
+        testID="description-input"
         style={Styles.Input}
         placeholder={translate('description')}
         onChangeText={setDescription}
         value={description}
       />
 
-      <TouchableOpacity onPress={Register} style={Styles.Button}>
+      <TouchableOpacity
+        onPress={Register}
+        style={Styles.Button}
+        testID="register-button">
         <Text style={Styles.Text}>{translate('register')}</Text>
       </TouchableOpacity>
     </Container>

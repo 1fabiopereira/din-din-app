@@ -20,7 +20,10 @@ export default (props: Props): React$Node => {
   }
 
   return (
-    <TouchableOpacity style={Styles.Item} onPress={Callback}>
+    <TouchableOpacity
+      style={Styles.Item}
+      onPress={Callback}
+      testID={`transaction-${props.index}`}>
       <View style={Styles.Info}>
         <Text style={Styles.Name}>{props.name || '--'}</Text>
         <Text style={Styles.Details}>{props.date || '--'}</Text>

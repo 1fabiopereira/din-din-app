@@ -3,7 +3,7 @@
  * @flow
  */
 export default (value: number, currency = 'R$'): string => {
-  if (typeof value !== 'number' || isNaN(value)) {
+  if (isNaN(value) || !value) {
     return `${currency}0,00`;
   }
 

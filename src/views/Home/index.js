@@ -41,7 +41,8 @@ const Home = (props: Props): React$Node => {
     Navigator.modal(props.componentId, Navigator.views.NEW);
   }
 
-  function RenderItem({item}) {
+  function RenderItem({item, index}) {
+    console.log('Index -> ', index);
     return (
       <Transaction
         name={item.name}
@@ -50,6 +51,7 @@ const Home = (props: Props): React$Node => {
         date={item.date}
         value={item.value}
         callback={Details}
+        index={index}
       />
     );
   }
@@ -79,14 +81,21 @@ const Home = (props: Props): React$Node => {
   }, [transactions]);
 
   return (
-    <SafeAreaView style={Styles.Container}>
+    <SafeAreaView style={Styles.Container} testID="home">
       <View style={Styles.Align}>
-        <Budget height={120} width={120} />
-        <Text style={Styles.Balance}>{Money(total || 0)}</Text>
-        <Text style={Styles.Info}>{translate('total-balance')}</Text>
+        <Budget testID="app-icon" height={120} width={120} />
+        <Text testID="balance" style={Styles.Balance}>
+          {Money(total || 0)}
+        </Text>
+        <Text testID="balance-message" style={Styles.Info}>
+          {translate('total-balance')}
+        </Text>
       </View>
 
-      <TouchableOpacity onPress={New} style={Styles.Button}>
+      <TouchableOpacity
+        onPress={New}
+        style={Styles.Button}
+        testID="add-transaction">
         <Text style={Styles.Text}>{translate('add-transaction')}</Text>
       </TouchableOpacity>
 

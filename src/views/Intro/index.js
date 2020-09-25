@@ -25,14 +25,23 @@ const Intro = (props: Props): React$Node => {
 
   return (
     <Container padding={30}>
-      <View style={[Styles.Center, Styles.Content]}>
-        <Text style={Styles.Name}>DinDin</Text>
-        <Wallet height={220} width={220} />
-        <Text style={Styles.Welcome}>{translate('welcome')}</Text>
-        <Text style={Styles.Message}>{translate('welcome-message')}</Text>
+      <View style={[Styles.Center, Styles.Content]} testID="intro">
+        <Text testID="app-name" style={Styles.Name}>
+          DinDin
+        </Text>
+        <Wallet height={220} width={220} testID="app-icon" />
+        <Text testID="welcome" style={Styles.Welcome}>
+          {translate('welcome')}
+        </Text>
+        <Text testID="message" style={Styles.Message}>
+          {translate('welcome-message')}
+        </Text>
       </View>
       <View style={[Styles.Center, Styles.Footer]}>
-        <TouchableOpacity onPress={Home} style={Styles.Button}>
+        <TouchableOpacity
+          testID="start-button"
+          onPress={Home}
+          style={Styles.Button}>
           <Text style={Styles.Text}>{translate('start')}</Text>
         </TouchableOpacity>
       </View>

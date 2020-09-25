@@ -37,22 +37,33 @@ const Details = (props: Props): React$Node => {
 
   return (
     <Container padding={30}>
-      <View style={Styles.Center}>
-        <Chart height={150} width={150} />
+      <View style={Styles.Center} testID="details">
+        <Chart height={150} width={150} testID="chart-icon" />
 
         <Text style={Styles.Text}>{translate('name')}</Text>
-        <Text style={Styles.Value}>{props.name || '--'}</Text>
+        <Text testID="field-name" style={Styles.Value}>
+          {props.name || '--'}
+        </Text>
 
         <Text style={Styles.Text}>{translate('value')}</Text>
-        <Text style={Styles.Value}>{Money(props.value || 0)}</Text>
+        <Text testID="field-value" style={Styles.Value}>
+          {Money(props.value || 0)}
+        </Text>
 
         <Text style={Styles.Text}>{translate('description')}</Text>
-        <Text style={Styles.Value}>{props.description || '--'}</Text>
+        <Text testID="field-description" style={Styles.Value}>
+          {props.description || '--'}
+        </Text>
 
         <Text style={Styles.Text}>{translate('date')}</Text>
-        <Text style={Styles.Value}>{props.date || '--'}</Text>
+        <Text testID="field-date" style={Styles.Value}>
+          {props.date || '--'}
+        </Text>
 
-        <TouchableOpacity onPress={Delete} style={Styles.Button}>
+        <TouchableOpacity
+          onPress={Delete}
+          style={Styles.Button}
+          testID="delete-button">
           <Text style={Styles.TextButton}>{translate('delete')}</Text>
         </TouchableOpacity>
       </View>
