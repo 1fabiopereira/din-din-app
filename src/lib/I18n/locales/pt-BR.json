@@ -4,6 +4,7 @@
   "delete": "Apagar",
   "description": "Descrição",
   "details-transaction": "Detalhes da transação",
+  "empty-transaction": "Você não possui transações.",
   "fields-message": "Os campos não foram preenchidos corretamente, certifique-se de que todos os campos foram preenchidos corretamente antes de tentar registar uma transação",
   "in": "Receita",
   "name": "Nome da transação",

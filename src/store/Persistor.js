@@ -8,7 +8,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 const config = {
   key: 'DinDin',
   storage: AsyncStorage,
-  whitelist: [],
+  whitelist: ['transactions'],
 };
 
 export default (reducers: any): any => persistReducer(config, reducers);

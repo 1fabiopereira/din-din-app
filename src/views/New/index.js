@@ -5,10 +5,12 @@
 import React, {useState} from 'react';
 import {Alert, TextInput, TouchableOpacity, View, Text} from 'react-native';
 import {Navigation} from 'react-native-navigation';
+import {useDispatch} from 'react-redux';
 
 import Images from '~/lib/Images';
 import {translate} from '~/lib/I18n';
 import Container from '~/components/Container';
+import {ActionCreators as TransactionsActions} from '~/store/Ducks/transactions';
 
 import Styles from './styles';
 import type {Props} from './_types';
@@ -25,15 +27,24 @@ const New = (props: Props): React$Node => {
     },
   });
 
+  const dispatch = useDispatch();
   const [out, setOut] = useState(null);
   const [name, setName] = useState(null);
   const [value, setValue] = useState(null);
   const [description, setDescription] = useState(null);
-  const [date] = useState(new Date());
+  const [date] = useState(new Date().toLocaleString());
 
   async function Register() {
     if (out !== null && name && description && date && value) {
-      //TODO: dispatch register
+      dispatch(
+        TransactionsActions.add({
+          date,
+          description,
+          name,
+          out,
+          value,
+        }),
+      );
       await Navigation.dismissAllModals();
     } else {
       Alert.alert(
@@ -81,6 +92,7 @@ const New = (props: Props): React$Node => {
         placeholder={translate('value')}
         onChangeText={setValue}
         value={value}
+        keyboardType="decimal-pad"
       />
 
       <TextInput

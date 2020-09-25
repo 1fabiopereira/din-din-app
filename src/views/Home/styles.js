@@ -18,6 +18,7 @@ export default StyleSheet.create({
   Block: {
     alignItems: 'center',
     flex: 1,
+    padding: 15,
   },
 
   Button: {
@@ -29,6 +30,12 @@ export default StyleSheet.create({
     justifyContent: 'center',
     marginTop: 30,
     width: 200,
+  },
+
+  Center: {
+    alignItems: 'center',
+    flex: 1,
+    justifyContent: 'center',
   },
 
   Container: {
@@ -43,5 +50,9 @@ export default StyleSheet.create({
     color: Colors.White,
     fontSize: 16,
     fontWeight: 'bold',
+  },
+
+  Width: {
+    width: '100%',
   },
 });

@@ -7,7 +7,7 @@
     "android:bundle": "(cd android && ./gradlew bundleRelease)",
     "android:apk": "(cd android && ./gradlew assembleRelease)",
     "ios": "react-native run-ios",
-    "start": "cp assets/DependencyGraph.js node_modules/metro/src/node-haste/ && react-native start",
+    "start": "react-native start",
     "test": "jest",
     "lint": "eslint --fix src/*.js src/**/*.js src/**/**/*.js src/**/**/**/*.js src/**/**/**/**/*.js",
     "flow": "flow",

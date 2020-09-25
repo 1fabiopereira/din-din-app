@@ -2,22 +2,33 @@
  * @author Fábio Pereira <fabio.pereira.gti@gmail.com>
  * @flow
  */
-import React from 'react';
-import {Text, View, SafeAreaView, TouchableOpacity} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {
+  Text,
+  View,
+  SafeAreaView,
+  TouchableOpacity,
+  FlatList,
+} from 'react-native';
 
 import Images from '~/lib/Images';
 import {translate} from '~/lib/I18n';
+import Calculate from '~/services/Calculate';
+import Money from '~/services/Money';
 
 import Navigator from '~/navigation/Navigator';
-import Container from '~/components/Container';
 import Transaction from '~/components/Transaction';
 
 import Styles from './styles';
 import type {Props} from './_types';
+import {useSelector} from 'react-redux';
 
-const {Budget} = Images;
+const {Budget, NotFound} = Images;
 
 const Home = (props: Props): React$Node => {
+  const {transactions} = useSelector((state) => state.transactions);
+  const [total, setTotal] = useState(0);
+
   // Details about transaction
   function Details(transaction: Object): void {
     Navigator.modal(props.componentId, Navigator.views.DETAILS, {
@@ -30,11 +41,48 @@ const Home = (props: Props): React$Node => {
     Navigator.modal(props.componentId, Navigator.views.NEW);
   }
 
+  function RenderItem({item}) {
+    return (
+      <Transaction
+        name={item.name}
+        description={item.description}
+        out={item.out}
+        date={item.date}
+        value={item.value}
+        callback={Details}
+      />
+    );
+  }
+
+  function RenderContent() {
+    if (transactions && transactions.length) {
+      return (
+        <FlatList
+          style={Styles.Width}
+          data={transactions}
+          renderItem={RenderItem}
+          keyExtractor={(item) => item.date}
+        />
+      );
+    }
+
+    return (
+      <View style={Styles.Center}>
+        <NotFound height={120} width={120} />
+        <Text style={Styles.Info}>{translate('empty-transaction')}</Text>
+      </View>
+    );
+  }
+
+  useEffect(() => {
+    setTotal(Calculate(transactions));
+  }, [transactions]);
+
   return (
     <SafeAreaView style={Styles.Container}>
       <View style={Styles.Align}>
         <Budget height={120} width={120} />
-        <Text style={Styles.Balance}>R$ 3.000,00</Text>
+        <Text style={Styles.Balance}>{Money(total || 0)}</Text>
         <Text style={Styles.Info}>{translate('total-balance')}</Text>
       </View>
 
@@ -42,44 +90,7 @@ const Home = (props: Props): React$Node => {
         <Text style={Styles.Text}>{translate('add-transaction')}</Text>
       </TouchableOpacity>
 
-      <Container padding={15}>
-        <View style={Styles.Block}>
-          <React.Fragment>
-            <Transaction
-              callback={Details}
-              name="Walmart"
-              date="10/10/2020, 08:32"
-              value="100,00"
-              description="Torradeira para a namorada"
-              out={true}
-            />
-            <Transaction
-              callback={Details}
-              name="Venda"
-              date="10/10/2020, 08:01"
-              value="199,99"
-              out={false}
-              description="Tenis da adidas"
-            />
-            <Transaction
-              callback={Details}
-              name="Americanas"
-              date="10/10/2020, 17:45"
-              value="100,00"
-              out={true}
-              description="Chocolates em barra"
-            />
-            <Transaction
-              callback={Details}
-              name="Reembolso"
-              date="10/10/2020, 17:45"
-              value="22,50"
-              out={false}
-              description="Plano de telefonia"
-            />
-          </React.Fragment>
-        </View>
-      </Container>
+      <View style={Styles.Block}>{RenderContent()}</View>
     </SafeAreaView>
   );
 };

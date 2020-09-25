@@ -4,6 +4,8 @@
  */
 import React from 'react';
 import {Text, View, TouchableOpacity} from 'react-native';
+
+import Money from '~/services/Money';
 import Styles from './styles';
 import type Props from './_types';
 
@@ -24,7 +26,7 @@ export default (props: Props): React$Node => {
         <Text style={Styles.Details}>{props.date || '--'}</Text>
       </View>
       <View style={Styles.Money}>
-        <Text style={[Styles.Value, Value]}>R${props.value || '--'}</Text>
+        <Text style={[Styles.Value, Value]}>{Money(props.value || 0)}</Text>
         <Text style={Styles.Details}>Mais Detalhes</Text>
       </View>
     </TouchableOpacity>

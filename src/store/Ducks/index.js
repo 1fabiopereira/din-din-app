@@ -4,6 +4,6 @@
  */
 import {combineReducers} from 'redux';
 
-import tabs from './tabs';
+import transactions from './transactions';
 
-export default combineReducers({tabs});
+export default combineReducers({transactions});
