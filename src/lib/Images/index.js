@@ -10,10 +10,12 @@ import Arrow from '~/assets/Images/arrow.png';
 import Budget from '~/assets/Svgs/budget.svg';
 import Wallet from '~/assets/Svgs/wallet.svg';
 import Welcome from '~/assets/Svgs/welcome.svg';
+import Chart from '~/assets/Svgs/chart.svg';
 
 export default {
   Arrow,
   Budget,
+  Chart,
   Wallet,
   Welcome,
 };

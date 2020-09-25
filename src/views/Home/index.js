@@ -35,7 +35,7 @@ const Home = (props: Props): React$Node => {
       <View style={Styles.Align}>
         <Budget height={120} width={120} />
         <Text style={Styles.Balance}>R$ 3.000,00</Text>
-        <Text>{translate('total-balance')}</Text>
+        <Text style={Styles.Info}>{translate('total-balance')}</Text>
       </View>
 
       <TouchableOpacity onPress={New} style={Styles.Button}>
@@ -50,6 +50,7 @@ const Home = (props: Props): React$Node => {
               name="Walmart"
               date="10/10/2020, 08:32"
               value="100,00"
+              description="Torradeira para a namorada"
               out={true}
             />
             <Transaction
@@ -58,6 +59,7 @@ const Home = (props: Props): React$Node => {
               date="10/10/2020, 08:01"
               value="199,99"
               out={false}
+              description="Tenis da adidas"
             />
             <Transaction
               callback={Details}
@@ -65,6 +67,7 @@ const Home = (props: Props): React$Node => {
               date="10/10/2020, 17:45"
               value="100,00"
               out={true}
+              description="Chocolates em barra"
             />
             <Transaction
               callback={Details}
@@ -72,6 +75,7 @@ const Home = (props: Props): React$Node => {
               date="10/10/2020, 17:45"
               value="22,50"
               out={false}
+              description="Plano de telefonia"
             />
           </React.Fragment>
         </View>

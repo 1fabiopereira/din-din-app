@@ -11,7 +11,8 @@ export default StyleSheet.create({
   },
 
   Balance: {
-    fontSize: 26,
+    fontSize: 28,
+    fontWeight: 'bold',
   },
 
   Block: {
@@ -27,14 +28,20 @@ export default StyleSheet.create({
     height: 45,
     justifyContent: 'center',
     marginTop: 30,
-    width: 150,
+    width: 200,
   },
 
   Container: {
     flex: 1,
   },
 
+  Info: {
+    color: Colors.DoveGray,
+  },
+
   Text: {
     color: Colors.White,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
