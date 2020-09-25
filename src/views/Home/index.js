@@ -42,16 +42,15 @@ const Home = (props: Props): React$Node => {
   }
 
   function RenderItem({item, index}) {
-    console.log('Index -> ', index);
     return (
       <Transaction
-        name={item.name}
-        description={item.description}
-        out={item.out}
-        date={item.date}
-        value={item.value}
         callback={Details}
+        date={item.date}
+        description={item.description}
         index={index}
+        name={item.name}
+        out={item.out}
+        value={item.value}
       />
     );
   }

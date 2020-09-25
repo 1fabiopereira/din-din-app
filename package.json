@@ -8,7 +8,7 @@
     "android:bundle": "(cd android && ./gradlew bundleRelease)",
     "check": "npm run flow | npm run lint",
     "detox:build": "detox build --configuration ios",
-    "test:e2e": "detox build --configuration ios && detox test --configuration ios",
+    "test:e2e": "yarn run detox:build && detox test --configuration ios",
     "test:unit": "jest __tests__/unit/ --verbose",
     "flow": "flow",
     "ios": "react-native run-ios",
