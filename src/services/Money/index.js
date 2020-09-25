@@ -3,9 +3,17 @@
  * @flow
  */
 export default (value: number, currency = 'R$'): string => {
-  if (`${value}`.indexOf('.') !== -1) {
-    return `${currency}${value}`.replace('.', ',');
+  if (typeof value !== 'number' || isNaN(value)) {
+    return `${currency}0,00`;
   }
 
-  return `${currency}${value},00`;
+  if (`${value}`.indexOf('.') !== -1) {
+    return value >= 0
+      ? `${currency}${value}`.replace('.', ',')
+      : `-${currency}${Math.abs(value)}`.replace('.', ',');
+  }
+
+  return value >= 0
+    ? `${currency}${value},00`
+    : `-${currency}${Math.abs(value)},00`;
 };

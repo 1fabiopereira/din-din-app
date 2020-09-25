@@ -4,6 +4,7 @@
  */
 export default (transactions: Object): number => {
   return transactions.reduce((acc, item) => {
-    return item.out ? (acc -= Number(item.value)) : (acc += Number(item.value));
+    const value = Number(item.value) >= 0 ? Number(item.value) : 0;
+    return item.out ? (acc -= value) : (acc += value);
   }, 0);
 };

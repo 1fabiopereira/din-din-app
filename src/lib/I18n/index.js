@@ -16,9 +16,13 @@ const normalizeTranslate = {
 };
 
 const getLanguageByDevice = () => {
-  return Platform.OS === 'ios'
-    ? NativeModules.SettingsManager.settings.AppleLocale
-    : NativeModules.I18nManager.localeIdentifier;
+  try {
+    return Platform.OS === 'ios'
+      ? NativeModules.SettingsManager.settings.AppleLocale
+      : NativeModules.I18nManager.localeIdentifier;
+  } catch (e) {
+    return normalizeTranslate.pt_BR;
+  }
 };
 
 I18n.translations = {
