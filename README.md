@@ -57,7 +57,7 @@ yarn run test:unit
 ```
 
 #### - e2e
-A execução dos testes `e2e` pode levar um pouco mais de tempo que os testes unitários, pois para eles é necessário a compilação do app, é importante resaltar que neste projeto os testes `e2e`
+A execução dos testes `e2e` pode levar um pouco mais de tempo na primeira execução que os testes unitários, pois para eles é necessário a compilação do app, é importante resaltar que neste projeto os testes `e2e`
 foram configurados somente para executar no simulador do IOS, isso ocorreu, pois não estou com o ambiente Android configurado totalmente na minha máquina.
 Os testes `e2e` possuem algumas dependências globais para que sejam executados corretamente, são essas dependências:
 
